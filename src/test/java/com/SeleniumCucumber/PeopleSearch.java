@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit;
 import junit.framework.Assert;
 
 import org.eclipse.jetty.util.thread.Timeout;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+//import org.junit.AfterClass;
+//import org.junit.BeforeClass;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -30,15 +30,19 @@ public class PeopleSearch {
 	static String Name;
 	//static WebDriver driver;
 	//static SsJsonHandler jh;
-	/*
+	
 	@Before
 	public void oneTimeSetUp() throws ParseException {
         // one-time initialization code 
-		jh = new SsJsonHandler();
-		jh.readJsonFile();	
+		CukesRunner.driver = new FirefoxDriver();
 		
     }//end oneTimeSetUp
-	*/
+	@After
+	public void teardownall(){
+		
+		CukesRunner.driver.close();
+	}
+	
 
 	@Given("^the user is on search people page$")
 	public void the_user_is_on_search_people_page() throws Throwable {
@@ -72,8 +76,9 @@ public class PeopleSearch {
 		   try {
 		     WebElement findElement = CukesRunner.driver.findElement(By.xpath("html/body/div[2]/div[2]/div/div/div/div[1]/div/div[2]/div/div[1]/div[2]/div[2]/div"));
 		     ;
-		     
+		    
 		     Assert.assertTrue((findElement.getText()).equals(arg1));
+		     
 		     break;
 		// If there is no text sleep one second and try again
 		   } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -81,6 +86,7 @@ public class PeopleSearch {
 		     Thread.sleep(1000);
 		   }
 		 }
+		 //CukesRunner.driver.close();
 		/*
 		 List<WebElement> elements = CukesRunner.driver.findElements(By.className("ng-binding"));
 		 

@@ -17,6 +17,7 @@ import com.Selenium.SsJsonHandler;
 @Cucumber.Options(
 		format={"pretty","html:target/cucumber","json-pretty:target/cucumber/cucumber-report.json"},
 		features="src/test/resources"
+		
 		)
 
 
@@ -36,6 +37,6 @@ public class CukesRunner {
 	
 	@AfterClass
 	public static void tearDown(){
-		driver.close();
+		//driver.close();
 	}
 }

@@ -11,7 +11,7 @@
         "description": "",
         "name": "Search by valid last name",
         "keyword": "Scenario Outline",
-        "line": 13,
+        "line": 14,
         "steps": [
           {
             "result": {
@@ -19,7 +19,7 @@
             },
             "name": "the input Krimm exists in the people directory",
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "match": {},
             "matchedColumns": [
               1
@@ -31,7 +31,7 @@
             },
             "name": "it is input",
             "keyword": "When ",
-            "line": 8,
+            "line": 9,
             "match": {}
           },
           {
@@ -40,7 +40,7 @@
             },
             "name": "the output should be Krimm",
             "keyword": "Then ",
-            "line": 9,
+            "line": 10,
             "match": {},
             "matchedColumns": [
               3
@@ -54,28 +54,28 @@
         "description": "",
         "name": "Search by valid last name",
         "keyword": "Scenario",
-        "line": 16,
+        "line": 18,
         "steps": [
           {
             "result": {
-              "duration": 8623965000,
+              "duration": 4527835000,
               "status": "passed"
             },
             "name": "the user is on search people page",
             "keyword": "Given ",
-            "line": 17,
+            "line": 19,
             "match": {
               "location": "PeopleSearch.the_user_is_on_search_people_page()"
             }
           },
           {
             "result": {
-              "duration": 89604000,
+              "duration": 87693000,
               "status": "passed"
             },
             "name": "he enters \"Krimm\" as employee last name",
             "keyword": "When ",
-            "line": 18,
+            "line": 20,
             "match": {
               "arguments": [
                 {
@@ -88,24 +88,24 @@
           },
           {
             "result": {
-              "duration": 67785000,
+              "duration": 73773000,
               "status": "passed"
             },
             "name": "he submits search request",
             "keyword": "When ",
-            "line": 19,
+            "line": 21,
             "match": {
               "location": "PeopleSearch.he_submits_search_request()"
             }
           },
           {
             "result": {
-              "duration": 1033762000,
+              "duration": 1029523000,
               "status": "passed"
             },
             "name": "ensure employee with last name \"Krimm\" is presented",
             "keyword": "Then ",
-            "line": 20,
+            "line": 22,
             "match": {
               "arguments": [
                 {

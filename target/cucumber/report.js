@@ -11,13 +11,13 @@ formatter.scenario({
   "description": "",
   "name": "Search by valid last name",
   "keyword": "Scenario Outline",
-  "line": 13,
+  "line": 14,
   "type": "scenario"
 });
 formatter.step({
   "name": "the input Krimm exists in the people directory",
   "keyword": "Given ",
-  "line": 7,
+  "line": 8,
   "matchedColumns": [
     1
   ]
@@ -25,12 +25,12 @@ formatter.step({
 formatter.step({
   "name": "it is input",
   "keyword": "When ",
-  "line": 8
+  "line": 9
 });
 formatter.step({
   "name": "the output should be Krimm",
   "keyword": "Then ",
-  "line": 9,
+  "line": 10,
   "matchedColumns": [
     3
   ]
@@ -52,34 +52,34 @@ formatter.scenario({
   "description": "",
   "name": "Search by valid last name",
   "keyword": "Scenario",
-  "line": 16,
+  "line": 18,
   "type": "scenario"
 });
 formatter.step({
   "name": "the user is on search people page",
   "keyword": "Given ",
-  "line": 17
+  "line": 19
 });
 formatter.step({
   "name": "he enters \"Krimm\" as employee last name",
   "keyword": "When ",
-  "line": 18
+  "line": 20
 });
 formatter.step({
   "name": "he submits search request",
   "keyword": "When ",
-  "line": 19
+  "line": 21
 });
 formatter.step({
   "name": "ensure employee with last name \"Krimm\" is presented",
   "keyword": "Then ",
-  "line": 20
+  "line": 22
 });
 formatter.match({
   "location": "PeopleSearch.the_user_is_on_search_people_page()"
 });
 formatter.result({
-  "duration": 8623965000,
+  "duration": 4527835000,
   "status": "passed"
 });
 formatter.match({
@@ -92,14 +92,14 @@ formatter.match({
   "location": "PeopleSearch.he_enters_as_employee_last_name(String)"
 });
 formatter.result({
-  "duration": 89604000,
+  "duration": 87693000,
   "status": "passed"
 });
 formatter.match({
   "location": "PeopleSearch.he_submits_search_request()"
 });
 formatter.result({
-  "duration": 67785000,
+  "duration": 73773000,
   "status": "passed"
 });
 formatter.match({
@@ -112,7 +112,7 @@ formatter.match({
   "location": "PeopleSearch.ensure_employee_with_last_name_is_presented(String)"
 });
 formatter.result({
-  "duration": 1033762000,
+  "duration": 1029523000,
   "status": "passed"
 });
 });
