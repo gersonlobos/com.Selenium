@@ -3,8 +3,10 @@ package com.SeleniumCucumber;
 //import org.json.simple.parser.ParseException;
 import java.nio.ReadOnlyBufferException;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Vector;
 import java.util.concurrent.TimeUnit;
 
 import junit.framework.Assert;
@@ -19,8 +21,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.By;
 
 import com.Selenium.SsJsonHandler;
+import com.Selenium.User;
 import com.thoughtworks.selenium.Selenium;
 
+import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.*;
 import cucumber.api.java.en.*;
@@ -28,6 +32,7 @@ import cucumber.api.java.en.*;
 
 public class PeopleSearch {
 	static String Name;
+	private List<User> expectedResults = new ArrayList<User>();
 	//static WebDriver driver;
 	//static SsJsonHandler jh;
 	
@@ -43,72 +48,51 @@ public class PeopleSearch {
 		CukesRunner.driver.close();
 	}
 	
-
-	@Given("^the user is on search people page$")
-	public void the_user_is_on_search_people_page() throws Throwable {
+	@Given("^user is on search page$")
+	public void user_is_on_search_page() throws Throwable {
 	    // Express the Regexp above with the code you wish you had
-		CukesRunner.driver = new FirefoxDriver();
 		CukesRunner.driver.get(CukesRunner.jh.getURL());
-		
 	}
 
-	@When("^he enters \"([^\"]*)\" as employee last name$")
-	public void he_enters_as_employee_last_name(String arg1) throws Throwable {
+	@Given("^the following employees exist$")
+	public void the_following_employees_exist(List<User> arg1) throws Throwable {
 	    // Express the Regexp above with the code you wish you had
+	    // For automatic conversion, change DataTable to List<YourType>
+		Vector<User> tempResult;
+		 //expectedResults = arg1.asList(User.class);
+		 //throw new PendingException();
+		System.out.println("this is the user coming from cucumber");
+		//arg1.get(0).displayUserInfo();
+		tempResult = CukesRunner.dataBase.Search4String(arg1.get(0).getLasttName());
 		
+		
+		
+		for(int x =0; x < tempResult.size(); x++){
+			
+			System.out.print( (x+1)+" ");
+			tempResult.get(x).displayUserInfo();
+		}
+		
+	}// end Given
+
+	@Given("^user enters \"([^\"]*)\" in search box$")
+	public void user_enters_in_search_box(String arg1) throws Throwable {
+	    // Express the Regexp above with the code you wish you had
 		CukesRunner.driver.findElement(By.id("home_search_criteria")).sendKeys(arg1);
-	    
 	}
 
-	@When("^he submits search request$")
-	public void he_submits_search_request() throws Throwable {
+	@When("^user submits search request$")
+	public void user_submits_search_request() throws Throwable {
 	    // Express the Regexp above with the code you wish you had
 		CukesRunner.driver.findElement(By.id("home-search-button")).click();
-	    
 	}
 
-	@Then("^ensure employee with last name \"([^\"]*)\" is presented$")
-	public void ensure_employee_with_last_name_is_presented(String arg1) throws Throwable {
+	@Then("^the output should be$")
+	public void the_output_should_be(DataTable arg1) throws Throwable {
 	    // Express the Regexp above with the code you wish you had
-		
-		// Try to get text
-		 while (true) {
-		   try {
-		     WebElement findElement = CukesRunner.driver.findElement(By.xpath("html/body/div[2]/div[2]/div/div/div/div[1]/div/div[2]/div/div[1]/div[2]/div[2]/div"));
-		     ;
-		    
-		     Assert.assertTrue((findElement.getText()).equals(arg1));
-		     
-		     break;
-		// If there is no text sleep one second and try again
-		   } catch (org.openqa.selenium.NoSuchElementException e) {
-		     System.out.println("Waiting...");
-		     Thread.sleep(1000);
-		   }
-		 }
-		 //CukesRunner.driver.close();
-		/*
-		 List<WebElement> elements = CukesRunner.driver.findElements(By.className("ng-binding"));
-		 
-		 Assert.assertTrue(elements.contains(arg1));
-		 
-           Assert.assertTrue(elements.size() >= 1);
-	       */     
-	        
-        /*
-          List<WebElement> links = CukesRunner.driver.findElements(By.tagName(arg1));
-
-        Iterator<WebElement> itr = links.iterator();
-        while(itr.hasNext()){
-            String test = itr.next().getText();
-
-            if(test.equals(arg1)){
-            String xpath = CukesRunner.driver.findElement(By.name(test)).getAttribute("xpath");
-            System.out.println(xpath);
-            }
-        }
-         */
-		
+	    // For automatic conversion, change DataTable to List<YourType>
+	    throw new PendingException();
 	}
+	
 
-}//end class
+}// *************************** end class ***************************

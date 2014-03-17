@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.Selenium.SsJsonHandler;
+import com.Selenium.UserDataBase;
 
 @RunWith(Cucumber.class)
 @Cucumber.Options(
@@ -24,6 +25,7 @@ import com.Selenium.SsJsonHandler;
 public class CukesRunner {
 	static WebDriver driver;
 	static SsJsonHandler jh;
+	static UserDataBase dataBase;
 	
 	
 	@BeforeClass
@@ -32,11 +34,15 @@ public class CukesRunner {
 		jh = new SsJsonHandler();
 		jh.readJsonFile();	
 		
+		dataBase= new UserDataBase();
+		dataBase.readCSVfile();
+		
+		
     }//end oneTimeSetUp
 	
 	
 	@AfterClass
 	public static void tearDown(){
-		//driver.close();
+		driver.close();
 	}
 }
