@@ -6,8 +6,18 @@ formatter.feature({
   "keyword": "Feature",
   "line": 1
 });
+formatter.before({
+  "duration": 1970353000,
+  "status": "passed"
+});
 formatter.scenario({
   "id": "people-search;search-people-by-valid-name",
+  "tags": [
+    {
+      "name": "@tag",
+      "line": 19
+    }
+  ],
   "description": "",
   "name": "Search people by valid name",
   "keyword": "Scenario",
@@ -141,14 +151,14 @@ formatter.match({
   "location": "PeopleSearch.user_is_on_search_page()"
 });
 formatter.result({
-  "duration": 1658557000,
+  "duration": 1245123000,
   "status": "passed"
 });
 formatter.match({
   "location": "PeopleSearch.the_following_employees_exist(User\u003e)"
 });
 formatter.result({
-  "duration": 13008000,
+  "duration": 11991000,
   "status": "passed"
 });
 formatter.match({
@@ -161,22 +171,26 @@ formatter.match({
   "location": "PeopleSearch.user_enters_in_search_box(String)"
 });
 formatter.result({
-  "duration": 78180000,
+  "duration": 71444000,
   "status": "passed"
 });
 formatter.match({
   "location": "PeopleSearch.user_submits_search_request()"
 });
 formatter.result({
-  "duration": 66231000,
+  "duration": 65670000,
   "status": "passed"
 });
 formatter.match({
-  "location": "PeopleSearch.the_output_should_be(DataTable)"
+  "location": "PeopleSearch.the_output_should_be(User\u003e)"
 });
 formatter.result({
-  "duration": 3123000,
+  "duration": 3732000,
   "status": "pending",
-  "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat com.SeleniumCucumber.PeopleSearch.the_output_should_be(PeopleSearch.java:94)\n\tat ✽.Then the output should be(PeopleSearch.feature:28)\n"
+  "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat com.SeleniumCucumber.PeopleSearch.the_output_should_be(PeopleSearch.java:118)\n\tat ✽.Then the output should be(PeopleSearch.feature:28)\n"
+});
+formatter.after({
+  "duration": 4675000,
+  "status": "passed"
 });
 });

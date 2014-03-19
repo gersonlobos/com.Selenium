@@ -51,6 +51,17 @@ public class User {
 			      + lasttName + " , email=" + email + " , PhoneNumber="  
 			      + phoneNumber + " , Department=" + department + "]"); 
 	}
+	public boolean compareUserTo(User temp){
+		
+		if( (temp.getFirstName()).equals(this.firstName) && (temp.getLasttName()).equals(this.lasttName)
+				&& (temp.getEmail()).equals(this.email) && (temp.getPhoneNumber()).equals(this.phoneNumber)
+				&& (temp.getDepartment()).equals(this.department)){
+		return true;
+		}
+		else{
+		return false;
+		}
+	}
 
 	
 	

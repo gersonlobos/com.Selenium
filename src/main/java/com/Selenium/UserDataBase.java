@@ -46,7 +46,6 @@ public class UserDataBase {
 		   //   + result[1] + " , email=" + result[2] + " , PhoneNumber="  
 		   //   + result[3] + " , Department=" + result[4] + "]");  
 		    
-		    
 		   }  
 		  } catch (FileNotFoundException e) {  
 		  e.printStackTrace();  
@@ -105,6 +104,17 @@ public class UserDataBase {
 				
 		}//end for loop
 		return tempVector; //the vector 
+	}
+	//   Search for user 
+	public boolean Search4User(User user){
+		
+		for(int x=0; x < listUsers.size(); ++x){
+			
+			if( (listUsers.get(x)).compareUserTo(user)){
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	

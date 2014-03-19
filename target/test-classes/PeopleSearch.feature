@@ -16,7 +16,7 @@ Feature: People search
 
 
 	 
-		
+	@tag
 	Scenario: Search people by valid name
 		Given user is on search page 
 		And the following employees exist

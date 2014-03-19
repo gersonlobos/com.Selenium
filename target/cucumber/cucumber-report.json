@@ -7,7 +7,35 @@
     "line": 1,
     "elements": [
       {
+        "after": [
+          {
+            "result": {
+              "duration": 4675000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "PeopleSearch.teardownall()"
+            }
+          }
+        ],
         "id": "people-search;search-people-by-valid-name",
+        "tags": [
+          {
+            "name": "@tag",
+            "line": 19
+          }
+        ],
+        "before": [
+          {
+            "result": {
+              "duration": 1970353000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "PeopleSearch.oneTimeSetUp()"
+            }
+          }
+        ],
         "description": "",
         "name": "Search people by valid name",
         "keyword": "Scenario",
@@ -15,7 +43,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1658557000,
+              "duration": 1245123000,
               "status": "passed"
             },
             "name": "user is on search page",
@@ -27,7 +55,7 @@
           },
           {
             "result": {
-              "duration": 13008000,
+              "duration": 11991000,
               "status": "passed"
             },
             "name": "the following employees exist",
@@ -71,7 +99,7 @@
           },
           {
             "result": {
-              "duration": 78180000,
+              "duration": 71444000,
               "status": "passed"
             },
             "name": "user enters \"Allen\" in search box",
@@ -89,7 +117,7 @@
           },
           {
             "result": {
-              "duration": 66231000,
+              "duration": 65670000,
               "status": "passed"
             },
             "name": "user submits search request",
@@ -101,15 +129,15 @@
           },
           {
             "result": {
-              "duration": 3123000,
+              "duration": 3732000,
               "status": "pending",
-              "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat com.SeleniumCucumber.PeopleSearch.the_output_should_be(PeopleSearch.java:94)\n\tat ✽.Then the output should be(PeopleSearch.feature:28)\n"
+              "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat com.SeleniumCucumber.PeopleSearch.the_output_should_be(PeopleSearch.java:118)\n\tat ✽.Then the output should be(PeopleSearch.feature:28)\n"
             },
             "name": "the output should be",
             "keyword": "Then ",
             "line": 28,
             "match": {
-              "location": "PeopleSearch.the_output_should_be(DataTable)"
+              "location": "PeopleSearch.the_output_should_be(User\u003e)"
             },
             "rows": [
               {
